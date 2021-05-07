@@ -12,14 +12,13 @@ a{
 /* Menu Bar */
 
 .dropbtn {
-    background-color: rgba(0, 26, 255, 0.63);
-    color: black;
+    background-color:  rgb(127, 255, 185);
     padding: 16px;
     font-size: 16px;
     border: none;
   }
   .dropbtn2 {
-    background-color:rgba(0, 26, 255, 0.63);
+    background-color : rgb(127, 255, 185);
     color: black;
     padding: 16px;
     font-size: 16px;
@@ -52,4 +51,7 @@ a{
   .dropdown:hover .dropdown-content {display: block;}
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
   
-  
+  .dropbtn:hover,
+  .dropbtn2:hover{
+    transform:scale(1.2);
+  }
