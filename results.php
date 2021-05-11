@@ -30,10 +30,9 @@
 
      <!--MAIN SECTION-->
      <section class = "body">
-     <br><br><br><br><br><br>
+     <br><br><br>
 
         <center> 
-        LITCHECKER LOGO.png <br><br>
         <pre>
         ──────▄▀▀▄────────────────▄▀▀▄────
 ─────▐▒▒▒▒▌──────────────▌▒▒▒▒▌───
