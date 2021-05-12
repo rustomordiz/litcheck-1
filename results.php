@@ -32,9 +32,44 @@
      <section class = "body">
      <br><br><br>
 
-        <center> 
-        <pre>
-        ──────▄▀▀▄────────────────▄▀▀▄────
+       
+       
+    <!--SEARCH RESULT -->
+
+        <!--SQL CONNECTION -->
+        <?php
+        session_start();
+        $server = "localhost";
+        $user ="root";
+        $pass ="";
+        $con=mysqli_connect($server,$user,$pass);
+        $db="litcheck";
+        mysqli_select_db($con,$db);
+
+        $search_this = $_SESSION['searching'];
+
+        $sqlselect = mysqli_query($con,"select title,category,type,link from literature where title like '%$search_this%' "); 
+        $sqlselectresult= mysqli_num_rows($sqlselect);
+        ?>
+
+        <ul>
+
+        <?php
+        // RESULTS
+        while ($results=mysqli_fetch_object($sqlselect)){
+                echo "<li>";
+                echo"<a href='$results->link'>$results->title ";
+                echo "</a>";    
+                echo " - ".$results->category.", ".$results->type."<br>";   
+                echo "</li>";
+        }
+        //IF NO RESULTS FOUND
+        if($sqlselectresult == 0){
+            echo "no results found";
+            echo "<center>";
+            echo "<pre>";
+            echo "
+──────▄▀▀▄────────────────▄▀▀▄────
 ─────▐▒▒▒▒▌──────────────▌▒▒▒▒▌───
 ─────▌▒▒▒▒▐─────────────▐▒▒▒▒▒▐───
 ────▐▒▒▒▒▒▒▌─▄▄▄▀▀▀▀▄▄▄─▌▒▒▒▒▒▒▌──
@@ -64,13 +99,20 @@
 █▀▄▒█▀▄▒█▀▒█▀█▒▀█▀▒█▒█▒█▒█▄▒█▒▄▀▀▐
 █▀▄▒█▀▄▒█▀▒█▄█▒▒█▒▒█▀█▒█▒█▀██▒█▒█▐
 ▀▀▒▒▀▒▀▒▀▀▒▀▒▀▒▒▀▒▒▀▒▀▒▀▒▀▒▒▀▒▒▀▀▐
-▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒﻿
-</pre>
-        </center>
+▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒";
+
+        }
+
+        ?>
+        </pre>
+        </center>    
+        </ul>
 
 
+    
     <!-- CREDITS --> 
     <?php include 'credits.php';?> 
+    
 
 </body>
 </html>

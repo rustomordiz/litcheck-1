@@ -23,9 +23,24 @@
 
         <center> 
         LITCHECKER LOGO.png <br><br>
-            <form name="contact" method="POST">
-                <input type="text" size="33" name="search"> <input type="submit" name="search" value="Search" formaction="results.php" >
-            </form>
+
+        <?php
+        error_reporting(0);
+        // SEARCH PROCESS
+	    if($_POST['btnsubmit']){
+            session_start();
+            $_SESSION['searching'] = $_POST['search'];
+            header('Location: results.php');    
+	    }
+        ?>
+
+        <form name="search-area" method="POST">
+            <!-- SEARCH BAR -->
+            <input type="text" size="33" name="search" required> 
+            <!-- SUBMIT BUTTON -->
+            <input class="button" type="submit" name="btnsubmit" value="Search">
+        </form>
+
         </center>
 
 
@@ -35,7 +50,6 @@
     <!-- CREDITS --> 
     <?php include 'credits.php';?> 
     
-
 </body>
 </html>
 
