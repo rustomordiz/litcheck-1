@@ -45,7 +45,7 @@
         if(isset($_GET['let']))
             $let = $_GET['let'];
         else
-            $let='';
+            $let='A';
 
         $sqlselect = mysqli_query($con,"select * from literature where author_1 like '$let%' "); // FOR AUTHOR_1
         $sqlselect2 = mysqli_query($con,"select * from literature where author_2 like '$let%' "); // FOR AUTHOR_2

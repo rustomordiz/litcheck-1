@@ -51,8 +51,8 @@
             while ($results=mysqli_fetch_object($sqlselect)){
                 echo "<li>";
                 echo"<a href='$results->link'>$results->title ";
-                echo "</a> <br>";    
-                echo $results->category.", ".$results->type;   
+                echo "</a> ";    
+                echo $results->category.", ".$results->type."<br>";      
                 echo "</li>";
             }
 
@@ -60,8 +60,8 @@
              while ($results=mysqli_fetch_object($sqlselect2)){
                 echo "<li>";
                 echo"<a href='$results->link'>$results->title ";
-                echo "</a> <br>";    
-                echo $results->category.", ".$results->type;   
+                echo "</a> ";    
+                echo $results->category.", ".$results->type."<br>";      
                 echo "</li>";
             }
 
@@ -69,8 +69,8 @@
              while ($results=mysqli_fetch_object($sqlselect3)){
                 echo "<li>";
                 echo"<a href='$results->link'>$results->title ";
-                echo "</a> <br>";    
-                echo $results->category.", ".$results->type;   
+                echo "</a>";    
+                echo $results->category.", ".$results->type."<br>";      
                 echo "</li>";
             }
 
