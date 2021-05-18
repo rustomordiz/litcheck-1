@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2021 at 02:11 PM
+-- Generation Time: May 18, 2021 at 02:53 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -43,12 +43,12 @@ CREATE TABLE `literature` (
 --
 
 INSERT INTO `literature` (`id`, `title`, `category`, `type`, `link`, `author_1`, `author_2`, `author_3`) VALUES
-(1, 'c++ programming for starters', 'Computer Engineering', 'Article', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Awit Lods', 'Bonjing Atabs', 'Allen kalbo'),
-(2, 'one plus one equals two', 'Algebra', 'Studies', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Armin Blonde', 'Corona Twenty', 'Edgy Alcasid'),
-(3, 'solar system multiverse', 'Astronomy', 'Blog', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Doggie Boss', 'Cuvid Vac', ''),
-(4, 'Why Laplace Transform Exist', 'Calculus', 'Journal', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Engot Digs', 'Bastos Pass', 'Coco Baktol'),
-(5, 'Concrete Mixing', 'Civil Engineering', 'Study', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Ender Man', 'Copper Shovel', ''),
-(6, 'Legit Flat Earth Theory', 'Earth Science', 'Study', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Dengvaxia Deds', '', '');
+(1, 'c++ programming for starters', 'Computer Engineering', 'Article', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Alpha', 'Beta', 'Charlie'),
+(2, 'one plus one equals two', 'Algebra', 'Studies', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Bravo', 'Delta', 'Foxtrot'),
+(3, 'solar system multiverse', 'Astronomy', 'Blog', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Echo', 'Dog', 'Cat'),
+(4, 'Why Laplace Transform Exist', 'Calculus', 'Journal', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Beta', 'Foxtrot', 'Ace'),
+(5, 'Concrete Mixing', 'Civil Engineering', 'Study', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Alpha', 'Charlie', 'Elephant'),
+(6, 'Legit Flat Earth Theory', 'Earth Science', 'Study', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Cat', 'Fox', 'Bravo');
 
 --
 -- Indexes for dumped tables

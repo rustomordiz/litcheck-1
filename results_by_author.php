@@ -22,7 +22,7 @@
 
 
     <!--DISPLAYING AUTHOR WORKS -->
-
+    <ul>
         <!--SQL CONNECTION -->
         <?php
         session_start();
@@ -38,45 +38,24 @@
          else
         $let='';
 
-        $sqlselect = mysqli_query($con,"select title,category,type,link from literature where author_1 like '$let%' "); // FOR AUTHOR_1
-        $sqlselect2 = mysqli_query($con,"select title,category,type,link from literature where author_2 like '$let%' "); // FOR AUTHOR_2
-        $sqlselect3 = mysqli_query($con,"select title,category,type,link from literature where author_3 like '$let%' "); // FOR AUTHOR_3
-        ?>
-
-        <ul>
-
-        <?php
-
-              //AUTHOR_1 LIST
-            while ($results=mysqli_fetch_object($sqlselect)){
+        $sqlselect = mysqli_query($con,"select DISTINCT title,category,type,link from literature where author_1 like '$let%' "); // FOR AUTHOR_1
+        $sqlselect2 = mysqli_query($con,"select DISTINCT title,category,type,link from literature where author_2 like '$let%' "); // FOR AUTHOR_2
+        $sqlselect3 = mysqli_query($con,"select DISTINCT title,category,type,link from literature where author_3 like '$let%' "); // FOR AUTHOR_3
+        
+        
+        while ($results=mysqli_fetch_object($sqlselect)){
                 echo "<li>";
                 echo"<a href='$results->link'>$results->title ";
-                echo "</a> ";    
+                echo "</a>, ";    
                 echo $results->category.", ".$results->type."<br>";      
                 echo "</li>";
-            }
+        }
+        
 
-             //AUTHOR_2 LIST
-             while ($results=mysqli_fetch_object($sqlselect2)){
-                echo "<li>";
-                echo"<a href='$results->link'>$results->title ";
-                echo "</a> ";    
-                echo $results->category.", ".$results->type."<br>";      
-                echo "</li>";
-            }
+        ?> 
 
-             //AUTHOR_3 LIST
-             while ($results=mysqli_fetch_object($sqlselect3)){
-                echo "<li>";
-                echo"<a href='$results->link'>$results->title ";
-                echo "</a>";    
-                echo $results->category.", ".$results->type."<br>";      
-                echo "</li>";
-            }
-
-        ?>
-            
-        </ul>
+      
+    </ul>
 
     <br><br><br><br><br><br>  
     </section>

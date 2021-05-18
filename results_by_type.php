@@ -46,12 +46,14 @@
         $db="litcheck";
         mysqli_select_db($con,$db);
 
-
+        if(isset($_GET['type']))
+        $type = $_GET['type'];
+      
        
         //search
         $search_this = $_SESSION['searching'];
 
-        $sqlselect = mysqli_query($con,"select title,category,type,link from literature where title like '%$search_this%' "); 
+        $sqlselect = mysqli_query($con,"select title,category,type,link from literature where title like '%$search_this%' and type like '%$type%' "); 
         $sqlselectresult= mysqli_num_rows($sqlselect);
         ?>
 
@@ -66,14 +68,16 @@
                 echo " - ".$results->category.", ".$results->type."<br>";   
                 echo "</li>";
         }
-        //IF NO RESULTS FOUND
-        if($sqlselectresult == 0){
+        
+         //IF NO RESULTS FOUND
+         if($sqlselectresult == 0){
             echo "no results found";
         } 
 
         ?>
         
         </ul>
+
 
 
     

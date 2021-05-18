@@ -47,9 +47,9 @@
         else
             $let='A';
 
-        $sqlselect = mysqli_query($con,"select * from literature where author_1 like '$let%' "); // FOR AUTHOR_1
-        $sqlselect2 = mysqli_query($con,"select * from literature where author_2 like '$let%' "); // FOR AUTHOR_2
-        $sqlselect3 = mysqli_query($con,"select * from literature where author_3 like '$let%' "); // FOR AUTHOR_3
+        $sqlselect = mysqli_query($con,"select  DISTINCT author_1 from literature where author_1 like '$let%' "); // FOR AUTHOR_1
+        $sqlselect2 = mysqli_query($con,"select DISTINCT author_2 from literature where author_2 like '$let%' "); // FOR AUTHOR_2
+        $sqlselect3 = mysqli_query($con,"select DISTINCT author_3 from literature where author_3 like '$let%' "); // FOR AUTHOR_3
         ?>
 
         <ul>
@@ -64,25 +64,23 @@
                 echo "</a>";   
                 echo "</li>";
             }
-
-             //AUTHOR_2 LIST
-             while ($results=mysqli_fetch_object($sqlselect2)){
+            //AUTHOR_2 LIST
+            while ($results=mysqli_fetch_object($sqlselect2)){
                 echo "<li>";
                 echo"<a href='results_by_author.php?let=$results->author_2'>";
-                echo $results->author_2." ";   
-                echo "</a>";       
+                echo $results->author_2." ";    
+                echo "</a>";   
                 echo "</li>";
             }
-
-             //AUTHOR_3 LIST
-             while ($results=mysqli_fetch_object($sqlselect3)){
+            //AUTHOR_3 LIST
+            while ($results=mysqli_fetch_object($sqlselect3)){
                 echo "<li>";
                 echo"<a href='results_by_author.php?let=$results->author_3'>";
-                echo $results->author_3." ";     
-                echo "</a>";
+                echo $results->author_3." ";    
+                echo "</a>";   
                 echo "</li>";
             }
-
+            
         ?>
             
         </ul>
